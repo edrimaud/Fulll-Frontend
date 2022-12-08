@@ -1,0 +1,23 @@
+.allEditBar {
+    width: 99%;
+    padding-bottom: 20px;
+    padding-right: 10px;
+}
+
+.openEditBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.editBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.editOptions {
+    width: 40px;
+    display: flex;
+    justify-content: space-between;
+}
