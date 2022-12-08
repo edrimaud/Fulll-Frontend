@@ -3,17 +3,19 @@ import { Component } from "react";
 
 
 export default class UserCard extends Component {
-
+    // On ouvre le profil GitHub du user
     openProfile = (url) => {
         window.open(url, "_blank");
     }
 
+    // On fait remonter au composant parent l'information qu'on a (dé)sélectionné le user
     onChangeSelection = (e) => {
         if (this.props.changeSelection) this.props.changeSelection(e.target.checked);
         this.setState();
     }
 
     render() {
+        // A chaque render, on a besoin de s'assurer d'avoir ces 5 variables à jour
         this.state = {
             userId: this.props.user?.id ? this.props.user.id : "",
             userLogin: this.props.user?.login ? this.props.user.login : "",
@@ -22,6 +24,7 @@ export default class UserCard extends Component {
             isSelected: this.props.user.isSelected ? this.props.user.isSelected : false
         };
 
+        // On n'affiche la checkbox que si le mode édition est ouvert
         var checkbox;
         if (this.props.editMode) {
             checkbox = <input type="checkbox" checked={this.state.isSelected} onChange={this.onChangeSelection} ></input>
